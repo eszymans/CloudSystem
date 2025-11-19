@@ -1,0 +1,14 @@
+﻿@page 
+@model Chmura.Pages.HomeModel
+@{
+    ViewData["Title"] = "Strona główna";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4">Witaj w aplikacji Chmura!</h1>
+    <p class="lead">Aby korzystać z aplikacji, zaloguj się lub zarejestruj nowe konto.</p>
+    <div class="mt-4">
+        <a asp-page="/Login" class="btn btn-primary btn-lg mx-2">Zaloguj się</a>
+        <a asp-page="/Register" class="btn btn-secondary btn-lg mx-2">Zarejestruj się</a>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Logowanie";
+}
+
+<h2>Logowanie</h2>
+<form method="post">
+    <div class="mb-3">
+        <label for="username" class="form-label">Nazwa u¿ytkownika</label>
+        <input type="text" class="form-control" id="username" name="Username" required />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Has³o</label>
+        <input type="password" class="form-control" id="password" name="Password" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Zaloguj siê</button>
+</form>
+@if (Model.ErrorMessage != null)
+{
+    <div class="alert alert-danger mt-3">@Model.ErrorMessage</div>
+    <p>
+        <a asp-page="/Register">Nie masz konta? Zarejestruj siê</a>
+    </p>
+}

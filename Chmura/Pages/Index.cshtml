@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="fileUpload" class="form-label">Wybierz plik do przesłania:</label>
+        <input type="file" class="form-control" id="fileUpload" name="uploadedFiles" multiple />
+
+    </div>
+    <button type="submit" class="btn btn-primary">Prześlij plik</button>
+</form>
+
+@if (Model.UploadResult != null)
+{
+    <div class="alert alert-info mt-3">
+        @Model.UploadResult
+    </div>
+}
+<a asp-page="/Logout" class="btn btn-secondary">Wyloguj się</a>
+
+@if (Model.FileNames?.Any() == true)
+{
+    <h3 class="mt-4">Pliki w chmurze:</h3>
+    <ul>
+        @foreach (var file in Model.FileNames)
+        {
+            <li>
+                @file
+                <a asp-page-handler="Download" asp-route-fileName="@file" class="btn btn-success btn-sm ms-2">Pobierz</a>
+                <form method="post" asp-page-handler="Delete" style="display:inline;">
+                    <input type="hidden" name="fileName" value="@file" />
+                    <button type="submit" class="btn btn-danger btn-sm ms-2">Usuń</button>
+                </form>
+            </li>
+        }
+    </ul>
+}

@@ -1,0 +1,9 @@
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Chmura.exe
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Chmura.dll
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Chmura.deps.json
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Chmura.runtimeconfig.json
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Chmura.pdb
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
