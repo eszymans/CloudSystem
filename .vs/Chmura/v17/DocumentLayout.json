@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\wikto\\source\\repos\\Chmura\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\chmura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\chmura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -11,16 +23,8 @@
       "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\chmura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\chmura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|solutionrelative:chmura\\data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CF966E6-5D9F-4F17-9CBE-7A396CF068CC}|Chmura\\Chmura.csproj|c:\\users\\wikto\\source\\repos\\chmura\\chmura\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,25 +106,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ApplicationDBContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Data\\ApplicationDBContextFactory.cs",
+              "RelativeDocumentMoniker": "Chmura\\Data\\ApplicationDBContextFactory.cs",
+              "ToolTip": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Data\\ApplicationDBContextFactory.cs",
+              "RelativeToolTip": "Chmura\\Data\\ApplicationDBContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T00:21:41.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Chmura\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Chmura\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T23:08:21.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T23:08:21.543Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Chmura",
+              "DocumentIndex": 0,
+              "Title": "Chmura.csproj",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Chmura.csproj",
               "RelativeDocumentMoniker": "Chmura\\Chmura.csproj",
               "ToolTip": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Chmura.csproj",
@@ -132,26 +147,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Program.cs",
               "RelativeDocumentMoniker": "Chmura\\Program.cs",
               "ToolTip": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Program.cs",
               "RelativeToolTip": "Chmura\\Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T21:51:52.735Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\appsettings.json",
               "RelativeDocumentMoniker": "Chmura\\appsettings.json",
               "ToolTip": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\appsettings.json",
               "RelativeToolTip": "Chmura\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-19T22:40:05.963Z",
               "EditorCaption": ""
@@ -164,27 +179,27 @@
               "RelativeDocumentMoniker": "Chmura\\Pages\\Register.cshtml.cs",
               "ToolTip": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Register.cshtml.cs",
               "RelativeToolTip": "Chmura\\Pages\\Register.cshtml.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAIwA4AAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T21:57:09.184Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Login.cshtml.cs",
               "ToolTip": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Login.cshtml.cs",
               "RelativeToolTip": "Chmura\\Pages\\Login.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T21:51:43.44Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Models\\User.cs",
               "RelativeDocumentMoniker": "Chmura\\Models\\User.cs",
@@ -192,12 +207,11 @@
               "RelativeToolTip": "Chmura\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T23:07:42.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T23:07:42.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Shared\\_Layout.cshtml",
@@ -205,12 +219,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T22:50:19.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:50:19.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Logout.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Logout.cshtml.cs",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Logout.cshtml.cs",
@@ -218,12 +231,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Logout.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T22:08:21.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:08:21.529Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Privacy.cshtml",
@@ -231,12 +243,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T22:05:54.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:05:54.724Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\_ViewStart.cshtml",
@@ -244,24 +255,22 @@
               "RelativeToolTip": "Chmura\\Pages\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T22:39:54.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:39:54.077Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Chmura",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Chmura.csproj",
               "RelativeDocumentMoniker": "Chmura\\Chmura.csproj",
               "ToolTip": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Chmura.csproj",
               "RelativeToolTip": "Chmura\\Chmura.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-19T22:49:35.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:49:35.572Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Privacy.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Privacy.cshtml.cs",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Privacy.cshtml.cs",
@@ -269,12 +278,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Privacy.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T22:06:16.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:06:16.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Logout.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Logout.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Logout.cshtml",
@@ -282,12 +290,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Logout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T22:08:06.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:08:06.402Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Register.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Register.cshtml",
@@ -295,12 +302,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Register.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T21:56:45.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:56:45.851Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\_ViewImports.cshtml",
@@ -308,12 +314,11 @@
               "RelativeToolTip": "Chmura\\Pages\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T22:39:54.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:39:54.838Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Home.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Home.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Home.cshtml",
@@ -321,12 +326,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Home.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T22:14:28.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:14:28.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Home.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Home.cshtml.cs",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Home.cshtml.cs",
@@ -334,12 +338,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Home.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T22:14:39.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:14:39.589Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Index.cshtml.cs",
@@ -347,12 +350,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Index.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T21:31:54.893Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:31:54.893Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Index.cshtml",
@@ -360,12 +362,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T21:27:56.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:27:56.325Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Error.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Error.cshtml",
@@ -373,12 +374,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T22:27:56.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:27:56.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Pages\\Login.cshtml",
               "RelativeDocumentMoniker": "Chmura\\Pages\\Login.cshtml",
@@ -386,12 +386,11 @@
               "RelativeToolTip": "Chmura\\Pages\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-19T21:51:18.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:51:18.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "Chmura\\wwwroot\\js\\site.js",
@@ -399,8 +398,7 @@
               "RelativeToolTip": "Chmura\\wwwroot\\js\\site.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-19T21:28:09.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:28:09.831Z"
             }
           ]
         }

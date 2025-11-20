@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
+Ôªøusing Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using static RegisterModel; // Dodaj na gÛrze
+using static RegisterModel; // Dodaj na g√≥rze
 
 public class LoginModel : PageModel
 {
@@ -32,7 +32,7 @@ public class LoginModel : PageModel
 
             return RedirectToPage("Index");
         }
-        ErrorMessage = "Nieprawid≥owa nazwa uøytkownika lub has≥o.";
+        ErrorMessage = "Nieprawid≈Çowa nazwa u≈ºytkownika lub has≈Ço.";
         return Page();
     }
 

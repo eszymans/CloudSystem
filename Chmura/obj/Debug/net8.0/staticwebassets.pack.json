@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Chmura.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Chmura.dvb9zjrzyn.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Chmura.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\wwwroot\\css\\site.css",
@@ -243,10 +243,6 @@
     {
       "Id": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Chmura.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Chmura.Microsoft.AspNetCore.StaticWebAssets.props",

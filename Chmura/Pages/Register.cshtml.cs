@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+ï»¿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Concurrent;
 
@@ -11,7 +11,7 @@ public class RegisterModel : PageModel
     public string ErrorMessage { get; set; }
     public string SuccessMessage { get; set; }
 
-    // Prosta "baza" u¿ytkowników w pamiêci (do testów)
+    // Prosta "baza" uÂ¿ytkownikÃ³w w pamiÃªci (do testÃ³w)
     public static ConcurrentDictionary<string, string> Users = new();
 
     public void OnGet() { }
@@ -20,18 +20,18 @@ public class RegisterModel : PageModel
     {
         if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
         {
-            ErrorMessage = "Podaj nazwê u¿ytkownika i has³o.";
+            ErrorMessage = "Podaj nazwÃª uÅ¼ytkownika i hasÅ‚o.";
             return Page();
         }
 
         if (Users.ContainsKey(Username))
         {
-            ErrorMessage = "U¿ytkownik o tej nazwie ju¿ istnieje.";
+            ErrorMessage = "UÅ¼ytkownik o tej nazwie juÅ¼ istnieje.";
             return Page();
         }
 
-        Users[Username] = Password; // W praktyce has³o powinno byæ hashowane!
-        SuccessMessage = "Rejestracja zakoñczona sukcesem. Mo¿esz siê zalogowaæ.";
+        Users[Username] = Password; // W praktyce hasÂ³o powinno byÃ¦ hashowane!
+        SuccessMessage = "Rejestracja zakoÅ„czona sukcesem. MoÅ¼esz siÄ™ zalogowaÄ‡.";
         return Page();
     }
 }
