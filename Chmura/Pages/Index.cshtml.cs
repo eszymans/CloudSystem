@@ -14,36 +14,55 @@ public class IndexModel : PageModel
     public List<IFormFile> UploadedFiles { get; set; }
 
     public string UploadResult { get; set; }
-
     public List<string> FileNames { get; set; }
 
-    private readonly string UploadPath;
+    public double UsedMegabytes { get; set; }
 
-    public IndexModel()
+
+    private const long MaxUserStorageBytes = 200 * 1024 * 1024; // 200 MB
+
+    private string GetUserFolder()
     {
-        UploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
-        if (!Directory.Exists(UploadPath))
-        {
-            Directory.CreateDirectory(UploadPath);
-        }
+        var username = User.Identity?.Name ?? "anonim";
+        var userFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", username);
+        if (!Directory.Exists(userFolder))
+            Directory.CreateDirectory(userFolder);
+        return userFolder;
     }
 
     public void OnGet()
     {
-        FileNames = Directory.GetFiles(UploadPath)
+        var userFolder = GetUserFolder();
+        long usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
+        UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
+        FileNames = Directory.GetFiles(userFolder)
             .Select(f => Path.GetFileName(f))
             .ToList();
     }
 
     public async Task<IActionResult> OnPostAsync()
     {
+        var userFolder = GetUserFolder();
+        long usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
+        long uploadBytes = UploadedFiles?.Sum(f => f.Length) ?? 0;
+
+        if (usedBytes + uploadBytes > MaxUserStorageBytes)
+        {
+            UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
+            UploadResult = "Przekroczono limit 200 MB na u¿ytkownika. Usuñ pliki, aby przes³aæ nowe.";
+            FileNames = Directory.GetFiles(userFolder)
+                .Select(f => Path.GetFileName(f))
+                .ToList();
+            return Page();
+        }
+
         if (UploadedFiles != null && UploadedFiles.Count > 0)
         {
             foreach (var file in UploadedFiles)
             {
                 if (file.Length > 0)
                 {
-                    var filePath = Path.Combine(UploadPath, Path.GetFileName(file.FileName));
+                    var filePath = Path.Combine(userFolder, Path.GetFileName(file.FileName));
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
@@ -57,35 +76,32 @@ public class IndexModel : PageModel
             UploadResult = "Nie wybrano plików.";
         }
 
-        FileNames = Directory.GetFiles(UploadPath)
+        usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
+        UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
+        FileNames = Directory.GetFiles(userFolder)
             .Select(f => Path.GetFileName(f))
             .ToList();
 
         return Page();
     }
 
-
     public async Task<IActionResult> OnPostDeleteAsync(string fileName)
     {
-        if (!string.IsNullOrEmpty(fileName))
+        var userFolder = GetUserFolder();
+        var filePath = Path.Combine(userFolder, fileName);
+        if (System.IO.File.Exists(filePath))
         {
-            var filePath = Path.Combine(UploadPath, fileName);
-            if (System.IO.File.Exists(filePath))
-            {
-                System.IO.File.Delete(filePath);
-                UploadResult = $"Plik '{fileName}' zosta³ usuniêty.";
-            }
-            else
-            {
-                UploadResult = $"Plik '{fileName}' nie istnieje.";
-            }
+            System.IO.File.Delete(filePath);
+            UploadResult = $"Plik '{fileName}' zosta³ usuniêty.";
         }
         else
         {
-            UploadResult = "Nie podano nazwy pliku do usuniêcia.";
+            UploadResult = $"Plik '{fileName}' nie istnieje.";
         }
 
-        FileNames = Directory.GetFiles(UploadPath)
+        long usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
+        UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
+        FileNames = Directory.GetFiles(userFolder)
             .Select(f => Path.GetFileName(f))
             .ToList();
 
@@ -94,10 +110,8 @@ public class IndexModel : PageModel
 
     public IActionResult OnGetDownload(string fileName)
     {
-        if (string.IsNullOrEmpty(fileName))
-            return NotFound();
-
-        var filePath = Path.Combine(UploadPath, fileName);
+        var userFolder = GetUserFolder();
+        var filePath = Path.Combine(userFolder, fileName);
         if (!System.IO.File.Exists(filePath))
             return NotFound();
 

@@ -5,6 +5,8 @@ C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\global.j
 C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Chmura.dll
 C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Chmura.runtimeconfig.json
 C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Chmura.pdb
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
 C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Microsoft.Data.Sqlite.dll
 C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll

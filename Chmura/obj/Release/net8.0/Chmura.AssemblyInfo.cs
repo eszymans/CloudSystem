@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Chmura")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e7fea3231ebd6be7513337647ff287651de19a2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e1a02b24c958ad41e2642f7aade65b16d9c769e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Chmura")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Chmura")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

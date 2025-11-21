@@ -38,3 +38,33 @@
         }
     </ul>
 }
+
+@{
+    var percent = Math.Min(100, Math.Round(Model.UsedMegabytes / 200 * 100, 2));
+}
+<div class="mb-3">
+    <strong>@Model.UsedMegabytes / 200 MB</strong>
+    <div class="progress" style="height: 25px;">
+        <div class="progress-bar" role="progressbar"
+             style="width: @percent%;"
+             aria-valuenow="@percent" aria-valuemin="0" aria-valuemax="100">
+            @percent%
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const input = document.getElementById('fileUpload');
+            const maxSize = 200 * 1024 * 1024; // 200 MB
+            for (let file of input.files) {
+                if (file.size > maxSize) {
+                    alert('Plik jest za duży (limit: 200 MB).');
+                    e.preventDefault();
+                    return;
+                }
+            }
+        });
+    </script>
+}

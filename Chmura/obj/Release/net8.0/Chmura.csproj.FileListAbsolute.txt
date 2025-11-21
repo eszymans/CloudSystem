@@ -131,3 +131,5 @@ C:\Users\wikto\source\repos\Chmura\Chmura\bin\Release\net8.0\runtimes\win-arm64\
 C:\Users\wikto\source\repos\Chmura\Chmura\bin\Release\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\wikto\source\repos\Chmura\Chmura\bin\Release\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\wikto\source\repos\Chmura\Chmura\obj\Release\net8.0\Chmura.sourcelink.json
+C:\Users\wikto\source\repos\Chmura\Chmura\bin\Release\net8.0\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
+C:\Users\wikto\source\repos\Chmura\Chmura\bin\Release\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
