@@ -88,6 +88,19 @@ public class IndexModel : PageModel
     public async Task<IActionResult> OnPostDeleteAsync(string fileName)
     {
         var userFolder = GetUserFolder();
+
+        if (string.IsNullOrEmpty(fileName))
+        {
+            UploadResult = "Nie podano nazwy pliku do usuniêcia.";
+            // Odœwie¿ listê plików i inne dane
+            long usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
+            UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
+            FileNames = Directory.GetFiles(userFolder)
+                .Select(f => Path.GetFileName(f))
+                .ToList();
+            return Page();
+        }
+
         var filePath = Path.Combine(userFolder, fileName);
         if (System.IO.File.Exists(filePath))
         {
@@ -99,14 +112,16 @@ public class IndexModel : PageModel
             UploadResult = $"Plik '{fileName}' nie istnieje.";
         }
 
-        long usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
-        UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
+        long usedBytes2 = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
+        UsedMegabytes = Math.Round(usedBytes2 / 1024d / 1024d, 2);
         FileNames = Directory.GetFiles(userFolder)
             .Select(f => Path.GetFileName(f))
             .ToList();
 
         return Page();
     }
+
+
 
     public IActionResult OnGetDownload(string fileName)
     {
