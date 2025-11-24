@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Chmura.csproj": {}
+    "C:\\Users\\wikto\\Source\\Repos\\CloudSystem2\\Chmura\\Chmura.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Chmura.csproj": {
+    "C:\\Users\\wikto\\Source\\Repos\\CloudSystem2\\Chmura\\Chmura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Chmura.csproj",
+        "projectUniqueName": "C:\\Users\\wikto\\Source\\Repos\\CloudSystem2\\Chmura\\Chmura.csproj",
         "projectName": "Chmura",
-        "projectPath": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\Chmura.csproj",
+        "projectPath": "C:\\Users\\wikto\\Source\\Repos\\CloudSystem2\\Chmura\\Chmura.csproj",
         "packagesPath": "C:\\Users\\wikto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wikto\\source\\repos\\Chmura\\Chmura\\obj\\",
+        "outputPath": "C:\\Users\\wikto\\Source\\Repos\\CloudSystem2\\Chmura\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
