@@ -57,10 +57,10 @@
     <script>
         document.querySelector('form').addEventListener('submit', function(e) {
             const input = document.getElementById('fileUpload');
-            const maxSize = 200 * 1024 * 1024; // 200 MB
+            const maxSize = 30 * 1024 * 1024; // 200 MB
             for (let file of input.files) {
                 if (file.size > maxSize) {
-                    alert('Plik jest za duży (limit: 200 MB).');
+                    alert('Plik jest za duży (limit: 30 MB).');
                     e.preventDefault();
                     return;
                 }
