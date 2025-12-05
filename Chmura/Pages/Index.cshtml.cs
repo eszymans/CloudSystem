@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 
-[Authorize]
+
 public class IndexModel : PageModel
 {
     [BindProperty]
@@ -49,7 +49,7 @@ public class IndexModel : PageModel
         if (usedBytes + uploadBytes > MaxUserStorageBytes)
         {
             UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
-            UploadResult = "Przekroczono limit 200 MB na u¿ytkownika. Usuñ pliki, aby przes³aæ nowe.";
+            UploadResult = "Przekroczono limit 200 MB na uï¿½ytkownika. UsuÅ„ pliki, aby przesÅ‚aÄ‡ nowe.";
             FileNames = Directory.GetFiles(userFolder)
                 .Select(f => Path.GetFileName(f))
                 .ToList();
@@ -69,11 +69,11 @@ public class IndexModel : PageModel
                     }
                 }
             }
-            UploadResult = $"Przes³ano {UploadedFiles.Count} plik(ów).";
+            UploadResult = $"PrzesÅ‚ano {UploadedFiles.Count} plik(Ã³w).";
         }
         else
         {
-            UploadResult = "Nie wybrano plików.";
+            UploadResult = "Nie wybrano plikÃ³w.";
         }
 
         usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
@@ -91,8 +91,8 @@ public class IndexModel : PageModel
 
         if (string.IsNullOrEmpty(fileName))
         {
-            UploadResult = "Nie podano nazwy pliku do usuniêcia.";
-            // Odœwie¿ listê plików i inne dane
+            UploadResult = "Nie podano nazwy pliku do usuniÄ™cia.";
+            // Odï¿½wieï¿½ listï¿½ plikï¿½w i inne dane
             long usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
             UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
             FileNames = Directory.GetFiles(userFolder)
@@ -105,7 +105,7 @@ public class IndexModel : PageModel
         if (System.IO.File.Exists(filePath))
         {
             System.IO.File.Delete(filePath);
-            UploadResult = $"Plik '{fileName}' zosta³ usuniêty.";
+            UploadResult = $"Plik '{fileName}' zostaÅ‚ usuniÄ™ty.";
         }
         else
         {

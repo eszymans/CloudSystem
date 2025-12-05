@@ -1,70 +1,135 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Mój Dysk";
+    // Obliczenia
+    var percent = Math.Min(100, Math.Round(Model.UsedMegabytes / 200 * 100, 1));
+    // Kolory paska zależnie od zużycia
+    string progressColor = percent > 90 ? "bg-danger" : (percent > 70 ? "bg-warning" : "bg-success");
 }
 
-<form method="post" enctype="multipart/form-data">
-    <div class="mb-3">
-        <label for="fileUpload" class="form-label">Wybierz plik do przesłania:</label>
-        <input type="file" class="form-control" id="fileUpload" name="uploadedFiles" multiple />
-
+<div class="container py-4">
+    
+    <div class="dashboard-card mb-4 p-4">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-0 text-dark">
+                    <i class="bi bi-hdd-network me-2"></i>Twój Dysk
+                </h5>
+            </div>
+            <div class="col-md-6 my-3 my-md-0">
+                <div class="progress" style="height: 20px; background-color: #e9ecef; border-radius: 10px;">
+                    <div class="progress-bar @progressColor" role="progressbar" 
+                         style="width: @percent%; border-radius: 10px;"
+                         aria-valuenow="@percent" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-md-end">
+                <span class="fw-bold fs-5">@percent%</span>
+                <div class="text-muted small">Wykorzystano @Model.UsedMegabytes MB z 200 MB</div>
+            </div>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Prześlij plik</button>
-</form>
 
-@if (Model.UploadResult != null)
-{
-    <div class="alert alert-info mt-3">
-        @Model.UploadResult
-    </div>
-}
-<a asp-page="/Logout" class="btn btn-secondary">Wyloguj się</a>
-
-@if (Model.FileNames?.Any() == true)
-{
-    <h3 class="mt-4">Pliki w chmurze:</h3>
-    <ul>
-        @foreach (var file in Model.FileNames)
-        {
-            <li>
-                @file
-                <a asp-page-handler="Download" asp-route-fileName="@file" class="btn btn-success btn-sm ms-2">Pobierz</a>
-                <form method="post" asp-page-handler="Delete" style="display:inline;">
-                    <input type="hidden" name="fileName" value="@file" />
-                    <button type="submit" class="btn btn-danger btn-sm ms-2">Usuń</button>
+    <div class="row g-4">
+        
+        <div class="col-lg-4">
+            <div class="dashboard-card h-100">
+                <h5 class="fw-bold mb-3">Dodaj pliki</h5>
+                <form method="post" enctype="multipart/form-data">
+                    <div class="upload-area p-4 text-center mb-3">
+                        <i class="bi bi-cloud-arrow-up fs-1 text-primary mb-2"></i>
+                        <p class="fw-bold mb-1">Przeciągnij lub kliknij</p>
+                        <span class="text-muted small d-block">Max 30 MB</span>
+                        <input type="file" id="fileUpload" name="uploadedFiles" multiple class="upload-input" />
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2 shadow-sm">
+                        <i class="bi bi-send me-2"></i>Wyślij
+                    </button>
                 </form>
-            </li>
-        }
-    </ul>
-}
+                
+                @if (Model.UploadResult != null)
+                {
+                    <div class="alert alert-light border mt-3 small">
+                        <i class="bi bi-info-circle me-1"></i> @Model.UploadResult
+                    </div>
+                }
+                
+                <div class="mt-4 text-center">
+                     <a asp-page="/Logout" class="text-danger text-decoration-none small fw-bold">
+                        <i class="bi bi-box-arrow-left me-1"></i>Wyloguj się
+                    </a>
+                </div>
+            </div>
+        </div>
 
-@{
-    var percent = Math.Min(100, Math.Round(Model.UsedMegabytes / 200 * 100, 2));
-}
-<div class="mb-3">
-    <strong>@Model.UsedMegabytes / 200 MB</strong>
-    <div class="progress" style="height: 25px;">
-        <div class="progress-bar" role="progressbar"
-             style="width: @percent%;"
-             aria-valuenow="@percent" aria-valuemin="0" aria-valuemax="100">
-            @percent%
+        <div class="col-lg-8">
+            <div class="dashboard-card h-100">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="fw-bold mb-0">Twoje pliki</h5>
+                    <span class="badge bg-light text-dark border">Ilość: @(Model.FileNames?.Count ?? 0)</span>
+                </div>
+
+                @if (Model.FileNames?.Any() == true)
+                {
+                    <div class="d-flex flex-column gap-2">
+                        @foreach (var file in Model.FileNames)
+                        {
+                            // Ikony
+                            string iconClass = "bg-light text-secondary";
+                            string iconName = "bi-file-earmark";
+                            
+                            if (file.EndsWith(".jpg") || file.EndsWith(".png")) { iconClass = "bg-primary-subtle text-primary"; iconName = "bi-file-image"; }
+                            else if (file.EndsWith(".pdf")) { iconClass = "bg-danger-subtle text-danger"; iconName = "bi-file-pdf"; }
+                            else if (file.EndsWith(".zip")) { iconClass = "bg-warning-subtle text-warning"; iconName = "bi-file-zip"; }
+                            else if (file.EndsWith(".txt")) { iconClass = "bg-info-subtle text-info"; iconName = "bi-file-text"; }
+
+                            <div class="file-item rounded-3 border-0 bg-white shadow-sm p-3 mb-2">
+                                <div class="d-flex align-items-center w-100">
+                                    <div class="rounded-3 p-2 me-3 @iconClass d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                        <i class="bi @iconName fs-4"></i>
+                                    </div>
+                                    
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <div class="fw-bold text-truncate">@file</div>
+                                    </div>
+
+                                    <div class="d-flex gap-2 ms-3">
+                                        <a asp-page-handler="Download" asp-route-fileName="@file" class="btn btn-light btn-sm text-primary border" title="Pobierz">
+                                            <i class="bi bi-download"></i>
+                                        </a>
+                                        <form method="post" asp-page-handler="Delete" class="m-0">
+                                            <input type="hidden" name="fileName" value="@file" />
+                                            <button type="submit" class="btn btn-light btn-sm text-danger border" title="Usuń" onclick="return confirm('Usunąć?');">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center py-5">
+                        <div class="mb-3 text-muted opacity-25">
+                            <i class="bi bi-folder-x fs-1"></i>
+                        </div>
+                        <p class="text-muted">Brak plików w chmurze.</p>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>
 
 @section Scripts {
     <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            const input = document.getElementById('fileUpload');
-            const maxSize = 30 * 1024 * 1024; // 200 MB
-            for (let file of input.files) {
-                if (file.size > maxSize) {
-                    alert('Plik jest za duży (limit: 30 MB).');
-                    e.preventDefault();
-                    return;
-                }
-            }
+        document.getElementById('fileUpload').addEventListener('change', function(e) {
+            const label = document.querySelector('.upload-area p');
+            if(this.files.length > 0) label.innerText = `Wybrano: ${this.files.length} plik(ów)`;
         });
     </script>
 }

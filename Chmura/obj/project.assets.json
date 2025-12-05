@@ -2628,23 +2628,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wikto\\.nuget\\packages\\": {},
+    "C:\\Users\\gosc\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wikto\\Source\\Repos\\CloudSystem2\\Chmura\\Chmura.csproj",
+      "projectUniqueName": "D:\\workspace\\Cloud\\Chmura\\Chmura.csproj",
       "projectName": "Chmura",
-      "projectPath": "C:\\Users\\wikto\\Source\\Repos\\CloudSystem2\\Chmura\\Chmura.csproj",
-      "packagesPath": "C:\\Users\\wikto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wikto\\Source\\Repos\\CloudSystem2\\Chmura\\obj\\",
+      "projectPath": "D:\\workspace\\Cloud\\Chmura\\Chmura.csproj",
+      "packagesPath": "C:\\Users\\gosc\\.nuget\\packages\\",
+      "outputPath": "D:\\workspace\\Cloud\\Chmura\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\wikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gosc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2653,6 +2653,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

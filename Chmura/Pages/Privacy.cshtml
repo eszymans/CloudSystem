@@ -1,8 +1,72 @@
 ﻿@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Polityka Prywatności";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="dashboard-card p-5">
+                
+                <div class="text-center mb-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 80px; height: 80px;">
+                        <i class="bi bi-shield-lock-fill fs-1"></i>
+                    </div>
+                    <h2 class="fw-bold text-dark">Polityka Prywatności</h2>
+                    <p class="text-muted">Dbamy o bezpieczeństwo Twoich danych w Chmurze.</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="fw-bold text-primary mb-3">
+                        <i class="bi bi-info-circle me-2"></i>O Aplikacji
+                    </h5>
+                    <p class="text-muted">
+                        Aplikacja "Chmura" jest projektem demonstracyjnym stworzonym w celach edukacyjnych. 
+                        Służy do przechowywania i zarządzania plikami w bezpiecznym środowisku chmurowym.
+                    </p>
+                </div>
+
+                <hr class="my-4 opacity-10">
+
+                <div class="mb-4">
+                    <h5 class="fw-bold text-primary mb-3">
+                        <i class="bi bi-database-check me-2"></i>Jakie dane przetwarzamy?
+                    </h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                            <span><strong>Dane logowania:</strong> Korzystamy z bezpiecznego logowania przez Google. Przechowujemy tylko Twój adres e-mail w celu identyfikacji konta.</span>
+                        </li>
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                            <span><strong>Przesłane pliki:</strong> Pliki, które wysyłasz na serwer, są przypisane wyłącznie do Twojego konta.</span>
+                        </li>
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                            <span><strong>Statystyki:</strong> Monitorujemy zajętość miejsca na dysku, aby zapewnić płynne działanie usługi (limit 200 MB).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr class="my-4 opacity-10">
+
+                <div class="mb-4">
+                    <h5 class="fw-bold text-primary mb-3">
+                        <i class="bi bi-lock me-2"></i>Bezpieczeństwo
+                    </h5>
+                    <div class="alert alert-light border border-start-0 border-end-0 border-top-0 border-bottom-0 border-start border-primary border-4 shadow-sm">
+                        <p class="mb-0 text-muted small">
+                            Mimo zastosowania nowoczesnych zabezpieczeń, prosimy <strong>nie przesyłać</strong> na serwer poufnych danych (takich jak hasła, dane bankowe czy skany dokumentów), ponieważ jest to wersja demonstracyjna aplikacji.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <small class="text-muted fst-italic">Ostatnia aktualizacja: @DateTime.Now.ToString("dd.MM.yyyy")</small>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

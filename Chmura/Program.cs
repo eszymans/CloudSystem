@@ -9,35 +9,30 @@ builder.Services.AddRazorPages();
 
 builder.Services.Configure<FormOptions>(options =>
 {
-    options.MultipartBodyLengthLimit = 200 * 1024 * 1024; // 200 MB
+    options.MultipartBodyLengthLimit = 200 * 1024 * 1024;
 });
 
 
-// AUTENTYKACJA
 builder.Services.AddAuthentication(options =>
-{
-    // Domyślne schematy
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-})
-.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
-{
-    options.LoginPath = "/login";
-    options.LogoutPath = "/logout";
-})
+    {
+        options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+    })
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+    {
+        options.LoginPath = "/login";
+        options.LogoutPath = "/logout";
+    })
 
 .AddGoogle(options =>
 {
     options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
     options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
 
-    // Ważne: NIE edytujemy już AuthorizationEndpoint!
 
     options.Events.OnRedirectToAuthorizationEndpoint = context =>
     {
         var redirectUri = context.RedirectUri;
-
-        // Dodajemy tylko JEDEN parametr prompt
         redirectUri += "&prompt=select_account";
 
         context.Response.Redirect(redirectUri);
