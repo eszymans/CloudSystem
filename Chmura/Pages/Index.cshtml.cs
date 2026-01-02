@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using Chmura.Services;
 
 
 public class IndexModel : PageModel
 {
+    private readonly ILoggingService _loggingService;
+
+    public IndexModel(ILoggingService loggingService)
+    {
+        _loggingService = loggingService;
+    }
+
     [BindProperty]
     public List<IFormFile> UploadedFiles { get; set; }
 
@@ -42,6 +50,7 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
+        var username = User.Identity?.Name ?? "anonim";
         var userFolder = GetUserFolder();
         long usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
         long uploadBytes = UploadedFiles?.Sum(f => f.Length) ?? 0;
@@ -49,7 +58,7 @@ public class IndexModel : PageModel
         if (usedBytes + uploadBytes > MaxUserStorageBytes)
         {
             UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
-            UploadResult = "Przekroczono limit 200 MB na u�ytkownika. Usuń pliki, aby przesłać nowe.";
+            UploadResult = "Przekroczono limit 200 MB na użytkownika. Usuń pliki, aby przesłać nowe.";
             FileNames = Directory.GetFiles(userFolder)
                 .Select(f => Path.GetFileName(f))
                 .ToList();
@@ -67,6 +76,8 @@ public class IndexModel : PageModel
                     {
                         await file.CopyToAsync(stream);
                     }
+                    // Log upload
+                    await _loggingService.LogFileUploadAsync(username, file.FileName, file.Length);
                 }
             }
             UploadResult = $"Przesłano {UploadedFiles.Count} plik(ów).";
@@ -87,12 +98,12 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnPostDeleteAsync(string fileName)
     {
+        var username = User.Identity?.Name ?? "anonim";
         var userFolder = GetUserFolder();
 
         if (string.IsNullOrEmpty(fileName))
         {
             UploadResult = "Nie podano nazwy pliku do usunięcia.";
-            // Od�wie� list� plik�w i inne dane
             long usedBytes = Directory.GetFiles(userFolder).Sum(f => new FileInfo(f).Length);
             UsedMegabytes = Math.Round(usedBytes / 1024d / 1024d, 2);
             FileNames = Directory.GetFiles(userFolder)
@@ -106,6 +117,8 @@ public class IndexModel : PageModel
         {
             System.IO.File.Delete(filePath);
             UploadResult = $"Plik '{fileName}' został usunięty.";
+            // Log delete
+            await _loggingService.LogFileDeleteAsync(username, fileName);
         }
         else
         {
@@ -121,14 +134,19 @@ public class IndexModel : PageModel
         return Page();
     }
 
-
-
-    public IActionResult OnGetDownload(string fileName)
+    public async Task<IActionResult> OnGetDownload(string fileName)
     {
+        var username = User.Identity?.Name ?? "anonim";
         var userFolder = GetUserFolder();
         var filePath = Path.Combine(userFolder, fileName);
         if (!System.IO.File.Exists(filePath))
+        {
+            await _loggingService.LogErrorAsync(username, "DOWNLOAD", $"Plik nie znaleziony: {fileName}");
             return NotFound();
+        }
+
+        // Log download
+        await _loggingService.LogFileDownloadAsync(username, fileName);
 
         var contentType = "application/octet-stream";
         return PhysicalFile(filePath, contentType, fileName);

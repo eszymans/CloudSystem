@@ -1,18 +1,29 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Chmura.Services;
 
 namespace Chmura.Pages
 {
     public class LogoutModel : PageModel
     {
-        public async Task<IActionResult> OnGet()
+        private readonly ILoggingService _loggingService;
+
+        public LogoutModel(ILoggingService loggingService)
         {
+            _loggingService = loggingService;
+        }
+
+        public async Task<IActionResult> OnGetAsync()
+        {
+            var username = User.Identity?.Name ?? "anonim";
+            await _loggingService.LogLogoutAsync(username);
+            
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToPage("/Home");
+            await HttpContext.SignOutAsync("Google");
+            
+            return Redirect("/");
         }
     }
 }

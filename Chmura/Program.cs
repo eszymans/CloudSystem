@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Http.Features;
+using Chmura.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<ILoggingService, LoggingService>();
 
 builder.Services.Configure<FormOptions>(options =>
 {
@@ -59,6 +61,18 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
+app.Use(async (context, next) =>
+{
+    await next();
+    
+    // Log pomyślne logowanie
+    if (context.Request.Path == "/login" && context.Response.StatusCode == 200 && context.User.Identity?.IsAuthenticated == true)
+    {
+        var loggingService = context.RequestServices.GetRequiredService<ILoggingService>();
+        var username = context.User.Identity?.Name ?? "unknown";
+        await loggingService.LogLoginAsync(username);
+    }
+});
 app.UseAuthorization();
 
 app.MapRazorPages();

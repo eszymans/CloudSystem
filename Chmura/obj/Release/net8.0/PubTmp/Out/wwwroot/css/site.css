@@ -1,4 +1,129 @@
 html {
+    @page
+    @model IndexModel
+    @{
+        ViewData["Title"] = "Chmura";
+    }
+
+    <div class="container py-4">
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg rounded shadow-sm mb-3" style="background: #fff;">
+                    <a class="navbar-brand fw-bold" asp-page="/Index">Chmura</a>
+                    <ul class="navbar-nav ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                    <div class="ms-auto">
+                        <a asp-page="/Logout" class="btn btn-outline-secondary btn-sm rounded-pill px-4">Wyloguj si�</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card custom-card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h3 class="fw-bold mb-3 text-primary">Witaj w aplikacji</h3>
+                        <p class="mb-4 text-muted">Prze�lij pliki do chmury, zaloguj si� przez Google.</p>
+                        <form method="post" enctype="multipart/form-data" class="mb-3">
+                            <div class="mb-3">
+                                <label for="fileUpload" class="form-label fw-semibold">
+                                    <i class="bi bi-upload me-2"></i>Wybierz pliki do przes�ania
+                                </label>
+                                <input type="file" class="form-control custom-input" id="fileUpload" name="uploadedFiles" multiple />
+                            </div>
+                            <button type="submit" class="btn neon-btn px-4 py-2 me-2">Prze�lij plik</button>
+                        </form>
+                        @if (Model.UploadResult != null)
+                        {
+                            <div class="alert alert-info mt-3">
+                                @Model.UploadResult
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="card custom-card shadow-sm">
+                    <div class="card-body">
+                        <h4 class="fw-bold mb-3">Pliki w chmurze:</h4>
+                        @if (Model.FileNames?.Any() == true)
+                        {
+                            <div class="row g-3">
+                                @foreach (var file in Model.FileNames)
+                                {
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-center custom-file-card p-2 rounded shadow-sm">
+                                            <span class="me-3 fs-4">
+                                                @if (file.EndsWith(".txt"))
+                                                {
+                                                    <i class="bi bi-file-earmark-text text-success"></i>
+                                                }
+                                                else if (file.EndsWith(".zip"))
+                                                {
+                                                    <i class="bi bi-file-earmark-zip text-warning"></i>
+                                                }
+                                                else
+                                                {
+                                                    <i class="bi bi-file-earmark text-info"></i>
+                                                }
+                                            </span>
+                                            <span class="flex-grow-1 text-truncate">@file</span>
+                                            <a asp-page-handler="Download" asp-route-fileName="@file" class="btn neon-btn-green btn-sm ms-2 px-3">Pobierz</a>
+                                            <form method="post" asp-page-handler="Delete" style="display:inline;">
+                                                <input type="hidden" name="fileName" value="@file" />
+                                                <button type="submit" class="btn neon-btn-red btn-sm ms-2 px-3">Usu�</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="text-muted">Brak plik�w w chmurze.</div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card custom-card shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        @{
+                            var percent = Math.Min(100, Math.Round(Model.UsedMegabytes / 200 * 100, 2));
+                        }
+                        <div class="mb-2 fw-bold">Wykorzystane miejsce</div>
+                        <div class="progress-circle mx-auto mb-2" style="--percent:@percent;">
+                            <span class="progress-value">@percent%</span>
+                        </div>
+                        <div class="text-muted">@Model.UsedMegabytes / 200 MB</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>
+            document.querySelector('form').addEventListener('submit', function(e) {
+                const input = document.getElementById('fileUpload');
+                const maxSize = 30 * 1024 * 1024; // 30 MB
+                for (let file of input.files) {
+                    if (file.size > maxSize) {
+                        alert('Plik jest za du�y (limit: 30 MB).');
+                        e.preventDefault();
+                        return;
+                    }
+                }
+            });
+        </script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    }
   font-size: 14px;
 }
 
@@ -20,3 +145,127 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+}
+
+/* Nowoczesne Karty */
+.dashboard-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    height: 100%;
+    transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Strefa Uploadu */
+.upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-area:hover {
+    border-color: var(--primary);
+    background-color: #eef2ff;
+}
+
+.upload-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Lista Plików */
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.2s;
+}
+
+.file-item:last-child { border-bottom: none; }
+.file-item:hover { background-color: #f9fafb; border-radius: 8px; }
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+.icon-img { background: #e0e7ff; color: #4338ca; }
+.icon-pdf { background: #fee2e2; color: #dc2626; }
+.icon-zip { background: #fef3c7; color: #d97706; }
+.icon-def { background: #f3f4f6; color: #4b5563; }
+
+/* Pasek Postępu */
+.progress-container {
+    background: #e5e7eb;
+    border-radius: 99px;
+    height: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary) 0%, #a855f7 100%);
+    border-radius: 99px;
+    transition: width 0.5s ease;
+}
+
+/* Przyciski */
+.btn-custom {
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.btn-custom:hover { background: var(--primary-hover); color: white; transform: scale(1.02); }
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s;
+    border: none;
+}
+.btn-icon:hover { background-color: #e5e7eb; }
