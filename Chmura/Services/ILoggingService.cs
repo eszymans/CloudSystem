@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -61,15 +61,18 @@ namespace Chmura.Services
             try
             {
                 var logFilePath = Path.Combine(_logsDirectory, logFileName);
-                var timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                var nowUtc = DateTime.UtcNow;
+                var franceCentralZone = TimeZoneInfo.FindSystemTimeZoneById("Romance Standard Time");
+                var localTime = TimeZoneInfo.ConvertTime(nowUtc, franceCentralZone);
+                var timestamp = localTime.ToString("yyyy-MM-dd HH:mm:ss");
+                
                 var logEntry = $"{timestamp} | {username} | {operation} | {details}{Environment.NewLine}";
 
                 await File.AppendAllTextAsync(logFilePath, logEntry);
             }
             catch (Exception ex)
             {
-                // Jeœli logowanie siê nie powiedzie, wypisz w konsoli
-                Console.WriteLine($"B³¹d podczas logowania: {ex.Message}");
+                Console.WriteLine($"BÅ‚Ä…d podczas logowania: {ex.Message}");
             }
         }
     }

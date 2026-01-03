@@ -14,7 +14,6 @@ builder.Services.Configure<FormOptions>(options =>
     options.MultipartBodyLengthLimit = 200 * 1024 * 1024;
 });
 
-
 builder.Services.AddAuthentication(options =>
     {
         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -25,23 +24,35 @@ builder.Services.AddAuthentication(options =>
         options.LoginPath = "/login";
         options.LogoutPath = "/logout";
     })
-
-.AddGoogle(options =>
-{
-    options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-
-
-    options.Events.OnRedirectToAuthorizationEndpoint = context =>
+    .AddGoogle(options =>
     {
-        var redirectUri = context.RedirectUri;
-        redirectUri += "&prompt=select_account";
+        options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+        options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
 
-        context.Response.Redirect(redirectUri);
-        return Task.CompletedTask;
-    };
-});
 
+        options.Events.OnRedirectToAuthorizationEndpoint = context =>
+        {
+            var redirectUri = context.RedirectUri;
+            redirectUri += "&prompt=select_account";
+            context.Response.Redirect(redirectUri);
+            return Task.CompletedTask;
+        };
+
+        // ✅ LOGOWANIE PO POMYŚLNEJ AUTENTYKACJI GOOGLE
+        options.Events.OnTicketReceived = async context =>
+        {
+            var email = context.Principal?.FindFirst("email")?.Value 
+                     ?? context.Principal?.Identity?.Name 
+                     ?? "unknown";
+            
+            try
+            {
+                var loggingService = context.HttpContext.RequestServices.GetRequiredService<ILoggingService>();
+                await loggingService.LogLoginAsync(email);
+            }
+            catch { }
+        };
+    });
 
 builder.WebHost.ConfigureKestrel(options =>
 {
@@ -61,18 +72,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
-app.Use(async (context, next) =>
-{
-    await next();
-    
-    // Log pomyślne logowanie
-    if (context.Request.Path == "/login" && context.Response.StatusCode == 200 && context.User.Identity?.IsAuthenticated == true)
-    {
-        var loggingService = context.RequestServices.GetRequiredService<ILoggingService>();
-        var username = context.User.Identity?.Name ?? "unknown";
-        await loggingService.LogLoginAsync(username);
-    }
-});
 app.UseAuthorization();
 
 app.MapRazorPages();

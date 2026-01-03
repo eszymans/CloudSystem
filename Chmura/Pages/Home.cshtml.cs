@@ -11,13 +11,16 @@ namespace Chmura.Pages
     {
         public void OnGet()
         {
+            // Jeśli zalogowany, idź na Index
             if (User.Identity?.IsAuthenticated == true)
             {
+                // Automatyczne przekierowanie jest w Home.cshtml
             }
         }
 
         public IActionResult OnPost()
         {
+            // Bez logowania tutaj! Challenge() jeszcze nie ma użytkownika
             var properties = new AuthenticationProperties
             {
                 RedirectUri = Url.Page("/Index")
