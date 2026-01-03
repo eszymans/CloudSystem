@@ -8,22 +8,10 @@ namespace Chmura.Pages
 {
     public class LogoutModel : PageModel
     {
-        private readonly ILoggingService _loggingService;
-
-        public LogoutModel(ILoggingService loggingService)
+        public async Task<IActionResult> OnGet()
         {
-            _loggingService = loggingService;
-        }
-
-        public async Task<IActionResult> OnGetAsync()
-        {
-            var username = User.Identity?.Name ?? "anonim";
-            await _loggingService.LogLogoutAsync(username);
-            
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            await HttpContext.SignOutAsync("Google");
-            
-            return Redirect("/");
+            return RedirectToPage("/Home");
         }
     }
 }

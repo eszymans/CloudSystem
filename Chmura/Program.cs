@@ -76,5 +76,4 @@ app.Use(async (context, next) =>
 app.UseAuthorization();
 
 app.MapRazorPages();
-
 app.Run();

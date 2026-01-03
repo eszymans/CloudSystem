@@ -1,13 +1,25 @@
-﻿@page
+﻿@page "/"
 @model Chmura.Pages.HomeModel
 @{
     ViewData["Title"] = "Strona główna";
+    
+    // Jeśli zalogowany, pokieruj do Index
+    if (User.Identity?.IsAuthenticated == true)
+    {
+        <script>
+            window.location.href = '/Index';
+        </script>
+    }
 }
 
 <div class="text-center mt-5">
     <h1 class="display-4">Witaj w aplikacji Chmura!</h1>
     <p class="lead">Aby korzystać z aplikacji, zaloguj się przez Google.</p>
     <div class="mt-4">
-        <a href="/" class="btn btn-primary btn-lg mx-2">Zaloguj się</a>
+        <form method="post">
+            <button type="submit" class="btn btn-primary btn-lg mx-2">
+                <i class="bi bi-google me-2"></i>Zaloguj się przez Google
+            </button>
+        </form>
     </div>
 </div>

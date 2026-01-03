@@ -8,7 +8,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Chmura.Services;
 
-
+[Authorize]
 public class IndexModel : PageModel
 {
     private readonly ILoggingService _loggingService;
