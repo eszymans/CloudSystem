@@ -12,6 +12,7 @@ namespace Chmura.Services
         Task LogFileDeleteAsync(string username, string fileName);
         Task LogFileDownloadAsync(string username, string fileName);
         Task LogErrorAsync(string username, string operation, string errorMessage);
+        Task LogInfoAsync(string username, string category, string message);
     }
 
     public class LoggingService : ILoggingService
@@ -54,6 +55,11 @@ namespace Chmura.Services
         public async Task LogErrorAsync(string username, string operation, string errorMessage)
         {
             await LogAsync("errors.log", username, operation, errorMessage);
+        }
+
+        public async Task LogInfoAsync(string username, string category, string message)
+        {
+            await LogAsync("info.log", username, category, message);
         }
 
         private async Task LogAsync(string logFileName, string username, string operation, string details)

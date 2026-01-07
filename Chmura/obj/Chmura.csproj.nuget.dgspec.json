@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arkadiusz Grabarczyk\\source\\repos\\CloudSystem\\Chmura\\Chmura.csproj": {}
+    "D:\\workspace\\Cloud\\Chmura\\Chmura.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arkadiusz Grabarczyk\\source\\repos\\CloudSystem\\Chmura\\Chmura.csproj": {
+    "D:\\workspace\\Cloud\\Chmura\\Chmura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arkadiusz Grabarczyk\\source\\repos\\CloudSystem\\Chmura\\Chmura.csproj",
+        "projectUniqueName": "D:\\workspace\\Cloud\\Chmura\\Chmura.csproj",
         "projectName": "Chmura",
-        "projectPath": "C:\\Users\\Arkadiusz Grabarczyk\\source\\repos\\CloudSystem\\Chmura\\Chmura.csproj",
-        "packagesPath": "C:\\Users\\Arkadiusz Grabarczyk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arkadiusz Grabarczyk\\source\\repos\\CloudSystem\\Chmura\\obj\\",
+        "projectPath": "D:\\workspace\\Cloud\\Chmura\\Chmura.csproj",
+        "packagesPath": "C:\\Users\\gosc\\.nuget\\packages\\",
+        "outputPath": "D:\\workspace\\Cloud\\Chmura\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arkadiusz Grabarczyk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gosc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

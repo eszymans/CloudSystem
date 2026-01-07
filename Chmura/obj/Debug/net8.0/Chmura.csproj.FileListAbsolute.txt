@@ -251,12 +251,6 @@ D:\workspace\Cloud\Chmura\obj\Debug\net8.0\scopedcss\projectbundle\Chmura.bundle
 D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets.build.json
 D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets.development.json
 D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets\msbuild.Chmura.Microsoft.AspNetCore.StaticWebAssets.props
-D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets\msbuild.Chmura.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets\msbuild.build.Chmura.props
-D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Chmura.props
-D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Chmura.props
-D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets.pack.json
 D:\workspace\Cloud\Chmura\obj\Debug\net8.0\Chmura.csproj.Up2Date
 D:\workspace\Cloud\Chmura\obj\Debug\net8.0\Chmura.dll
 D:\workspace\Cloud\Chmura\obj\Debug\net8.0\refint\Chmura.dll
@@ -398,3 +392,9 @@ C:\Users\Arkadiusz Grabarczyk\source\repos\CloudSystem\Chmura\obj\Debug\net8.0\r
 C:\Users\Arkadiusz Grabarczyk\source\repos\CloudSystem\Chmura\obj\Debug\net8.0\Chmura.pdb
 C:\Users\Arkadiusz Grabarczyk\source\repos\CloudSystem\Chmura\obj\Debug\net8.0\Chmura.genruntimeconfig.cache
 C:\Users\Arkadiusz Grabarczyk\source\repos\CloudSystem\Chmura\obj\Debug\net8.0\ref\Chmura.dll
+D:\workspace\Cloud\Chmura\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\workspace\Cloud\Chmura\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\workspace\Cloud\Chmura\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\workspace\Cloud\Chmura\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\workspace\Cloud\Chmura\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

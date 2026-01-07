@@ -1,4 +1,4 @@
-﻿@page "/Index"
+﻿    @page "/Index"
 @model IndexModel
 @{
     ViewData["Title"] = "Mój Dysk";
@@ -42,8 +42,17 @@
                         <i class="bi bi-cloud-arrow-up fs-1 text-primary mb-2"></i>
                         <p class="fw-bold mb-1">Przeciągnij lub kliknij</p>
                         <span class="text-muted small d-block">Max 30 MB</span>
-                        <input type="file" id="fileUpload" name="uploadedFiles" multiple class="upload-input" />
+                        <input type="file" id="fileUpload" asp-for="UploadedFiles" multiple class="upload-input" />
                     </div>
+
+                    <div class="form-check mt-2 text-start mb-3">
+                        <input class="form-check-input" type="checkbox" asp-for="UnpackZips" id="unpackZips" />
+                        <label class="form-check-label" for="unpackZips">Rozpakuj archiwa (.zip) po przesłaniu</label>
+                    </div>
+
+                    <!-- Podgląd zawartości ZIP (wczytywane asynchronicznie, bez nowego formularza) -->
+                    <div id="zipPreview" class="mb-3"></div>
+
                     <button type="submit" class="btn btn-primary w-100 py-2 shadow-sm">
                         <i class="bi bi-send me-2"></i>Wyślij
                     </button>
@@ -75,8 +84,8 @@
                 {
                     <div class="d-flex flex-column gap-2">
                         @foreach (var file in Model.FileNames)
-                        {
-                            // Ikony
+                            {
+                                // Ikony
                             string iconClass = "bg-light text-secondary";
                             string iconName = "bi-file-earmark";
                             
@@ -127,9 +136,25 @@
 
 @section Scripts {
     <script>
-        document.getElementById('fileUpload').addEventListener('change', function(e) {
-            const label = document.querySelector('.upload-area p');
+        const fileInput = document.getElementById('fileUpload');
+        const label = document.querySelector('.upload-area p');
+
+        fileInput.addEventListener('change', function(e) {
             if(this.files.length > 0) label.innerText = `Wybrano: ${this.files.length} plik(ów)`;
+            else label.innerText = 'Przeciągnij lub kliknij';
+        });
+
+        // Walidacja rozmiaru plików przed wysłaniem (jak wcześniej)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const input = document.getElementById('fileUpload');
+            const maxSize = 30 * 1024 * 1024; // 30 MB
+            for (let file of input.files) {
+                if (file.size > maxSize) {
+                    alert('Plik jest za duży (limit: 30 MB).');
+                    e.preventDefault();
+                    return;
+                }
+            }
         });
     </script>
 }

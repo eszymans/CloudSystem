@@ -7,7 +7,7 @@ using Chmura.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<ILoggingService, LoggingService>();
+builder.Services.AddSingleton<ILoggingService, LoggingService>();
 
 builder.Services.Configure<FormOptions>(options =>
 {
@@ -53,6 +53,9 @@ builder.Services.AddAuthentication(options =>
             catch { }
         };
     });
+
+builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+builder.Services.AddHostedService<ZipExtractionHostedService>();
 
 builder.WebHost.ConfigureKestrel(options =>
 {
